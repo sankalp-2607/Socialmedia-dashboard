@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SocialPulse | Dashboard</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h2>SocialPulse</h2>
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="nav-item active">
+            <a href="index.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="currentColor"/>
+              </svg>
+              <span>Dashboard</span>
+              <div class="nav-indicator"></div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="engagement.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z" fill="currentColor"/>
+              </svg>
+              <span>Engagement</span>
+              <div class="nav-indicator"></div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="sentiment.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="currentColor"/>
+              </svg>
+              <span>Sentiment</span>
+              <div class="nav-indicator"></div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="reports.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" fill="currentColor"/>
+              </svg>
+              <span>Reports</span>
+              <div class="nav-indicator"></div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="settings.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" fill="currentColor"/>
+              </svg>
+              <span>Settings</span>
+              <div class="nav-indicator"></div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">
+            <img src="https://ui-avatars.com/api/?name=John+Doe&background=60a5fa&color=fff" alt="User">
+          </div>
+          <div class="user-info">
+            <h4>John Doe</h4>
+            <p>Premium User</p>
+          </div>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Section -->
+    <main class="main-content">
+      <header>
+        <h1>Analytics Overview</h1>
+        <input type="text" placeholder="🔍 Search reports, insights..." />
+      </header>
+
+      <!-- Cards -->
+      <section class="cards">
+        <div class="card">
+          <h3>Followers</h3>
+          <p class="stat-value">24.3K</p>
+          <span class="stat-positive">↑ 12% this week</span>
+        </div>
+        <div class="card">
+          <h3>Engagement</h3>
+          <p class="stat-value">8.9%</p>
+          <span class="stat-positive">↑ 5% this week</span>
+        </div>
+        <div class="card">
+          <h3>Post Reach</h3>
+          <p class="stat-value">102K</p>
+          <span class="stat-negative">↓ 3% this week</span>
+        </div>
+        <div class="card">
+          <h3>Avg Sentiment</h3>
+          <p class="stat-value">😊 Positive</p>
+          <span class="stat-neutral">+0.8 Sentiment Score</span>
+        </div>
+      </section>
+
+      <!-- Charts -->
+      <section class="charts">
+        <div class="chart-box">
+          <h2>Weekly Engagement</h2>
+          <canvas id="engagementChart"></canvas>
+        </div>
+        <div class="chart-box interactive-sentiment">
+          <h2>Sentiment Analysis</h2>
+          <canvas id="sentimentChart"></canvas>
+          <div class="sentiment-details">
+            <div class="sentiment-stat">
+              <span class="sentiment-label">Positive</span>
+              <span class="sentiment-value" id="positiveVal">65%</span>
+            </div>
+            <div class="sentiment-stat">
+              <span class="sentiment-label">Neutral</span>
+              <span class="sentiment-value" id="neutralVal">25%</span>
+            </div>
+            <div class="sentiment-stat">
+              <span class="sentiment-label">Negative</span>
+              <span class="sentiment-value" id="negativeVal">10%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social Metrics Bar Charts -->
+      <section class="metrics-section">
+        <h2>Social Media Metrics</h2>
+        <div class="metrics-grid">
+          <div class="chart-box">
+            <h3>Likes</h3>
+            <canvas id="likesChart"></canvas>
+          </div>
+          <div class="chart-box">
+            <h3>Followers</h3>
+            <canvas id="followersChart"></canvas>
+          </div>
+          <div class="chart-box">
+            <h3>Shares</h3>
+            <canvas id="sharesChart"></canvas>
+          </div>
+          <div class="chart-box">
+            <h3>Reposts</h3>
+            <canvas id="repostsChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Top Performing Posts -->
+      <section class="top-posts-section">
+        <h2>Top Performing Posts</h2>
+        <div class="posts-grid">
+          <div class="post-card">
+            <div class="post-header">
+              <span class="post-rank">🥇 #1</span>
+              <span class="post-date">Oct 25, 2025</span>
+            </div>
+            <p class="post-content">"Just launched our new feature! Check it out 🚀"</p>
+            <div class="post-stats">
+              <span>❤️ 2.4K</span>
+              <span>💬 342</span>
+              <span>🔁 567</span>
+            </div>
+            <div class="post-engagement">
+              <div class="engagement-bar" style="width: 95%"></div>
+            </div>
+          </div>
+
+          <div class="post-card">
+            <div class="post-header">
+              <span class="post-rank">🥈 #2</span>
+              <span class="post-date">Oct 23, 2025</span>
+            </div>
+            <p class="post-content">"Behind the scenes of our team meeting 💼"</p>
+            <div class="post-stats">
+              <span>❤️ 1.8K</span>
+              <span>💬 256</span>
+              <span>🔁 423</span>
+            </div>
+            <div class="post-engagement">
+              <div class="engagement-bar" style="width: 82%"></div>
+            </div>
+          </div>
+
+          <div class="post-card">
+            <div class="post-header">
+              <span class="post-rank">🥉 #3</span>
+              <span class="post-date">Oct 21, 2025</span>
+            </div>
+            <p class="post-content">"Customer success story that warms our hearts 💙"</p>
+            <div class="post-stats">
+              <span>❤️ 1.5K</span>
+              <span>💬 198</span>
+              <span>🔁 389</span>
+            </div>
+            <div class="post-engagement">
+              <div class="engagement-bar" style="width: 76%"></div>
+            </div>
+          </div>
+
+          <div class="post-card">
+            <div class="post-header">
+              <span class="post-rank">4️⃣ #4</span>
+              <span class="post-date">Oct 20, 2025</span>
+            </div>
+            <p class="post-content">"Weekend vibes with the team! 🌟"</p>
+            <div class="post-stats">
+              <span>❤️ 1.2K</span>
+              <span>💬 167</span>
+              <span>🔁 298</span>
+            </div>
+            <div class="post-engagement">
+              <div class="engagement-bar" style="width: 68%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>

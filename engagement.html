@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engagement | SocialPulse</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>📊 SocialPulse</h2>
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li class="active"><a href="engagement.html">Engagement</a></li>
+        <li><a href="sentiment.html">Sentiment</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <header>
+        <h1>Engagement Insights</h1>
+      </header>
+
+      <section class="cards">
+        <div class="card">
+          <h3>Likes</h3>
+          <p>58K</p>
+        </div>
+        <div class="card">
+          <h3>Comments</h3>
+          <p>12.4K</p>
+        </div>
+        <div class="card">
+          <h3>Shares</h3>
+          <p>4.2K</p>
+        </div>
+      </section>
+
+      <section class="charts">
+        <div class="chart-container">
+          <canvas id="postPerformanceChart"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
